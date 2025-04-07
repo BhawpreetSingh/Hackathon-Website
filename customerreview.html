@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Reviews</title>
+  <link rel="stylesheet" href="customerreview.css">
+  <link rel="stylesheet" href="customernav.css">
+  <link rel="stylesheet" href="customerfooter.css">
+</head>
+<body>
+
+  <header>
+    <a href="#" class="logo">
+        <img src="img/Main logo.jpg" alt="Logo" class="logo-img">
+        <span>Motivational</span>
+    </a>
+
+    <div class="nav-container" id="navContainer">
+        <ul class="nav-links">
+            <li><a href="first.html" class="active">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            
+            <li class="dropdown">
+                <a href="#">Resources <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Articles</a></li>
+                    <li><a href="#">Videos</a></li>
+                </ul>
+            </li>
+            
+            <li class="dropdown dropdown-testimonials">
+                <a href="#" style="color: white;">Testimonials <i class="fas fa-chevron-down"></i></a>
+                <ul>
+                    <li>Customer Reviews</li>
+                    <li>Client Feedback</li>
+                </ul>
+            </li>
+        </ul>
+
+        <button class="cta-button">Get Started</button>
+    </div>
+
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+</header>
+
+<main class="container">
+  <h1>What Our Customers Say</h1>
+
+ 
+
+  <!-- Review Form -->
+  <section class="review-form">
+    <h2>Leave a Review</h2>
+    <form id="review-form">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <textarea id="review" placeholder="Write your review..." required></textarea>
+      <label for="rating">Rate the app:</label>
+      <select id="rating" required>
+        <option value="5">⭐⭐⭐⭐⭐</option>
+        <option value="4">⭐⭐⭐⭐</option>
+        <option value="3">⭐⭐⭐</option>
+        <option value="2">⭐⭐</option>
+        <option value="1">⭐</option>
+      </select>
+      <button type="submit">Submit Review</button>
+    </form>
+  </section><br>
+    
+  <!-- Review Section -->
+  <section class="reviews">
+    <div class="review">
+      <p class="review-text">"This app changed my life! Super easy to use and very helpful."</p>
+      <p class="review-author">- Jatin don</p>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+    </div>
+    
+    <div class="review">
+      <p class="review-text">"Great experience! Highly recommend it."</p>
+      <p class="review-author">- pavneet</p>
+      <div class="stars">⭐⭐⭐⭐</div>
+    </div>
+    
+    <div class="review">
+      <p class="review-text">"Good, but could use some improvements."</p>
+      <p class="review-author">- kabir</p>
+      <div class="stars">⭐⭐⭐</div>
+    </div>
+    
+    <!-- Submitted Reviews -->
+    <div id="user-reviews"></div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p class="quote">“Dream it. Believe it. Achieve it!”</p>
+
+  <div class="links">
+    <a href="index.html">Home</a> |
+    <a href="#">About</a> |
+    <a href="#">Services</a> |
+    <a href="#">Contact</a>
+  </div>
+
+  <div class="social-icons">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+
+  <a href="#" class="back-to-top">⬆ Back to Top</a>
+
+  <p class="footer-bottom">&copy; 2025 Motivational App. All Rights Reserved.</p>
+</footer>
+
+<script>
+  
+  document.querySelector('.back-to-top').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  document.getElementById("review-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const name = document.getElementById("name").value;
+    const review = document.getElementById("review").value;
+    const rating = document.getElementById("rating").value;
+    
+    if (name && review) {
+      const reviewContainer = document.createElement("div");
+      reviewContainer.classList.add("review");
+      
+      reviewContainer.innerHTML = `
+        <p class="review-text">"${review}"</p>
+        <p class="review-author">- ${name}</p>
+        <div class="stars">${'⭐'.repeat(rating)}</div>
+      `;
+      
+      document.getElementById("user-reviews").appendChild(reviewContainer);
+      document.getElementById("review-form").reset();
+    }
+  });
+</script>
+
+</body>
+</html>

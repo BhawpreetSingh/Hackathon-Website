@@ -1,0 +1,257 @@
+/* Background Image */
+body {
+  background: url("img/Starbackground.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Image Section */
+#image-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 20px 6%;
+  padding-top: 40px;
+}
+
+#image-section img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Responsive: Show 2 per row on small screens */
+@media (max-width: 768px) {
+  #image-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Show 1 per row on mobile */
+@media (max-width: 480px) {
+  #image-section {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Why Choose Motiva Section */
+#why-choose {
+  text-align: center;
+  padding: 50px 5%;
+  background: rgba(42, 41, 41, 0.8);
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.choose-h2 {
+  padding-bottom: 20px;
+  color: white;
+}
+
+.why-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.why-item {
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  font-weight: 600;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  width: 500px;
+  height: 50px;
+  text-decoration: none;
+  color: #000;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.why-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* How It Works Section */
+#how-it-works {
+  text-align: center;
+  padding: 20px 5% 50px;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.step {
+  background: rgba(61, 61, 61, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 20px;
+  text-decoration: none;
+  transition: transform 0.3s ease-in-out;
+  display: block;
+  width: 300px;
+}
+
+.step:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 204, 0, 0.9);
+  color: #000;
+}
+
+/* Big Image Section */
+.big-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Clickable Image Popup */
+.clickable-image {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  display: none;
+}
+
+.popup-container img {
+  width: 30vw;
+  height: auto;
+  max-width: 400px;
+  max-height: 80vh;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.popup-container.active {
+  display: flex;
+}
+
+/* Download Section */
+#download-section {
+  padding: 50px 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin: 40px 20px 0;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* QR Code Box */
+.qr-box {
+  background: rgba(22, 33, 62, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.qr-box img {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.download-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px; /* small vertical gap between text and buttons */
+}
+
+.button-wrapper {
+  display: flex;
+  gap: 10px; /* SMALL gap between Apple & Google buttons */
+  flex-wrap: wrap;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: column; /* Stack Apple on top of Google */
+   /* Small vertical space between them */
+  align-items: flex-start;
+}
+
+.store-img {
+  width: 240px;
+  height: auto;
+  transition: transform 0.3s ease;
+  border-radius: 8px;
+}
+
+.store-img:hover {
+  transform: scale(1.05);
+}
+/* Stacking */
+.stack-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: linear-gradient(135deg, #1f1f1f, #2d2d2d); /* Dark gradient */
+  color: #ffcc00; /* Bright gold text for contrast */
+  padding: 40px;
+  margin: 60px auto;
+  max-width: 900px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.stack-card.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stack-card img {
+  width: 220px;
+  height: auto;
+  margin-right: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.stack-card .text-content {
+  text-align: left;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+}
